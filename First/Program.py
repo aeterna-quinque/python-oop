@@ -32,6 +32,7 @@ Notes
 """
 
 
+
 def float_check(n: Any) -> bool:
     """
 
@@ -55,6 +56,7 @@ def float_check(n: Any) -> bool:
         return False
 
 
+    
 def create_num_list() -> List[float]:
     """
 
@@ -65,7 +67,7 @@ def create_num_list() -> List[float]:
     Returns
     -------
     numbers: list of float
-        True если в переменной хранится вещественное число, False в противном случае.
+        Список введенных пользователем вещественных чисел.
 
     """
     numbers = []
@@ -76,6 +78,7 @@ def create_num_list() -> List[float]:
         else:
             break
     return numbers
+
 
 
 def multiply_num_list(numbers: List[float]) -> List[float]:
@@ -97,6 +100,7 @@ def multiply_num_list(numbers: List[float]) -> List[float]:
     for i in range(len(numbers)):
         numbers[i] *= 0.13
     return numbers
+
 
 
 def sort_num_list(numbers: List[float]) -> List[float]:
@@ -126,6 +130,7 @@ def sort_num_list(numbers: List[float]) -> List[float]:
     return numbers
 
 
+
 def output_num_list(numbers: List[float]):
     """
 
@@ -144,6 +149,7 @@ def output_num_list(numbers: List[float]):
     print(result)
 
 
+    
 def write_in_file(numbers: List[float]) -> bool:
     """
 
@@ -176,10 +182,12 @@ def write_in_file(numbers: List[float]) -> bool:
     except ValueError:
         return False
 
+    
 
 # Здесь выполняется код программы.
 # Для осуществления проверки ввода используется бесконечный цикл while True
 def main():
+    
     # Цикл ввода списка вещественных чисел
     print("Введите числа. Чтобы перестать вводить числа, введите что-то другое")
     while True:
@@ -187,8 +195,10 @@ def main():
         if len(nums) > 0:
             break
         print("Введите хотя бы одно число")
+        
     # Выполнение функции умножения
     multi_nums = multiply_num_list(nums)
+    
     # Цикл сортировки списка
     print("Выберите тип сортировки\nПо возрастанию - 0\tПо убыванию - 1")
     while True:
@@ -196,8 +206,10 @@ def main():
         if len(sorted_nums) > 0:
             break
         print("Вы ввели неверное значение. Введите новое")
+        
     # Вывод отсортированного списка
     output_num_list(sorted_nums)
+    
     # Цикл записи в csv-файл
     print("Округлить числа в файле?\nНет - 0\tДа - 1")
     while True:
